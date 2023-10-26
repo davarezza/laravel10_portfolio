@@ -15,8 +15,7 @@
                 PASURUAN
               </h1>
               <p class="lead mt-2 mb-4" data-aos="fade-up" data-aos-delay="300">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam
-                non ex quod iure sunt? Inventore.
+                I'm passionate about crafting robust APIs, optimizing databases, and ensuring the server-side magic happens flawlessly.
               </p>
               <div data-aos="fade-up" data-aos-delay="600">
                 {{-- <a href="#work" class="btn btn-brand me-3 btn-home">Explore My Work</a> --}}

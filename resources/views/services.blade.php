@@ -24,8 +24,7 @@
                     </div>
                     <h5 class="mt-4 mb-2">Coding</h5>
                     <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Repellat, minima.
+                      Software development using various programming languages. I have experience in delivering high-quality code to meet your needs.
                     </p>
                     <a href="#" class="link-custom">Read More</a>
                   </div>
@@ -38,8 +37,7 @@
                     </div>
                     <h5 class="mt-4 mb-2">Laravel 10</h5>
                     <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Repellat, minima.
+                      I'm an expert in Laravel, a leading PHP framework. With Laravel 10, I can create sophisticated, efficient, and reliable web applications.
                     </p>
                     <a href="#" class="link-custom">Read More</a>
                   </div>
@@ -52,8 +50,7 @@
                     </div>
                     <h5 class="mt-4 mb-2">DBMS</h5>
                     <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Repellat, minima.
+                      Covers database design, implementation, and management. I can help you manage data, whether on a small or large scale.
                     </p>
                     <a href="#" class="link-custom">Read More</a>
                   </div>
@@ -66,8 +63,7 @@
                       </div>
                       <h5 class="mt-4 mb-2">Data Analyst</h5>
                       <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Repellat, minima.
+                        I analyze your data to generate valuable insights. Using advanced analytics tools, I assist you in making data-driven decisions.
                       </p>
                       <a href="#" class="link-custom">Read More</a>
                     </div>
@@ -80,8 +76,7 @@
                       </div>
                       <h5 class="mt-4 mb-2">Server Monitor</h5>
                       <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Repellat, minima.
+                        Monitoring your servers and IT infrastructure in real-time. This enables early issue detection for optimal server performance.
                       </p>
                       <a href="#" class="link-custom">Read More</a>
                     </div>
@@ -94,8 +89,7 @@
                       </div>
                       <h5 class="mt-4 mb-2">API Management</h5>
                       <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Repellat, minima.
+                        I have experience in managing and integrating APIs (Application Programming Interfaces) to connect different applications and services.
                       </p>
                       <a href="#" class="link-custom">Read More</a>
                     </div>

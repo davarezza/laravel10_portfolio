@@ -27,7 +27,7 @@
                     <p class="my-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, provident. Fuga quam quidem assumenda accusantium fugiat eos.</p>
                     <div class="person">
                       <h5 class="mb-0">Bayu Erlangga</h5>
-                      <p class="mb-0">WhatsApp</p>
+                      <p class="mb-0">24 Oct 2023</p>
                     </div>
                   </div>
     
@@ -41,7 +41,7 @@
                     <p class="my-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, provident. Fuga quam quidem assumenda accusantium fugiat eos.</p>
                     <div class="person">
                       <h5 class="mb-0">Yeremia Galang</h5>
-                      <p class="mb-0">Facebook</p>
+                      <p class="mb-0">26 Oct 2023</p>
                     </div>
                   </div>
     
@@ -55,7 +55,7 @@
                     <p class="my-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, provident. Fuga quam quidem assumenda accusantium fugiat eos.</p>
                     <div class="person">
                       <h5 class="mb-0">Rizki Habsi</h5>
-                      <p class="mb-0">Instagram</p>
+                      <p class="mb-0">21 Oct 2023</p>
                     </div>
                   </div>
     
