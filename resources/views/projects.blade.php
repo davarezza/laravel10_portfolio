@@ -22,15 +22,13 @@
                       <img
                         class="rounded-4"
                         src="{{ asset('assets/images/project2.png') }}"
-                        alt="Laravel Website"
+                        alt="Academic website"
                       />
                     </div>
                     <div class="card-custom-content p-4">
-                      <h4>Laravel Website</h4>
+                      <h4>Academic website</h4>
                       <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Reiciendis, harum. Dolores corporis vitae ipsum
-                        perspiciatis.
+                        Created using Laravel, this application features Authentication and CRUD operations. It utilizes Laravel Sanctum for secure authentication and incorporates CRUD functionality through an API.
                       </p>
                       <a href="#" class="link-custom">Read More</a>
                     </div>
@@ -48,9 +46,7 @@
                     <div class="card-custom-content p-4">
                       <h4>Top-Up Website</h4>
                       <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Reiciendis, harum. Dolores corporis vitae ipsum
-                        perspiciatis.
+                        Developed using a combination of HTML, CSS, and JavaScript, this application features a diamond purchasing system that allows users to check the prices of diamonds.
                       </p>
                       <a href="#" class="link-custom">Read More</a>
                     </div>
@@ -67,10 +63,8 @@
                     </div>
                     <div class="card-custom-content p-4">
                       <h4>Shape Calculator</h4>
-                      <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Reiciendis, harum. Dolores corporis vitae ipsum
-                        perspiciatis.
+                      <p>                 
+                        Shape Calculator website, a versatile online tool designed to calculate various geometric shapes. This user-friendly platform allows users to effortlessly compute the parameters of different three-dimensional figures.
                       </p>
                       <a href="#" class="link-custom">Read More</a>
                     </div>
@@ -86,7 +80,7 @@
                       />
                     </div>
                     <div class="card-custom-content p-4">
-                      <h4>CSS Tutorial</h4>
+                      <h4>Laravel E-commerce</h4>
                       <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Reiciendis, harum. Dolores corporis vitae ipsum
