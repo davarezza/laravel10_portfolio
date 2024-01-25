@@ -16,80 +16,30 @@
               </div>
     
               <div class="row gy-4">
+
+                @foreach ($products as $key => $data)
                 <div class="col-md-6" data-aos="fade-up">
                   <div class="card-custom rounded-4 bg-base shadow-effect">
                     <div class="card-custom-image rounded-4">
                       <img
                         class="rounded-4"
-                        src="{{ asset('assets/images/project2.png') }}"
-                        alt="Academic website"
+                        src="{{ asset('product/'.$data->image) }}"
+                        alt="{{ $data->name }}"
                       />
                     </div>
                     <div class="card-custom-content p-4">
-                      <h4>Academic website</h4>
+                      <h4>{{ $data->name }}</h4>
                       <p>
-                        Created using Laravel, this application features Authentication and CRUD operations. It utilizes Laravel Sanctum for secure authentication and incorporates CRUD functionality through an API.
+                        {{ Illuminate\Support\Str::limit($data->description, $limit = 160, $end = '...') }}
                       </p>
-                      <a href="#" class="link-custom">Read More</a>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <a href="#" class="link-custom">Read More</a>
+                        <a href="{{ $data->link }}" target="_blank" class="btn btn-dark text-white rounded-4"><i class="lab la-github"></i> Github</a>
+                      </div>
                     </div>
                   </div>
                 </div>
-                <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
-                  <div class="card-custom rounded-4 bg-base shadow-effect">
-                    <div class="card-custom-image rounded-4">
-                      <img
-                        class="rounded-4"
-                        src="{{ asset('assets/images/project1.png') }}"
-                        alt="Laravel Website"
-                      />
-                    </div>
-                    <div class="card-custom-content p-4">
-                      <h4>Top-Up Website</h4>
-                      <p>
-                        Developed using a combination of HTML, CSS, and JavaScript, this application features a diamond purchasing system that allows users to check the prices of diamonds.
-                      </p>
-                      <a href="#" class="link-custom">Read More</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6" data-aos="fade-up">
-                  <div class="card-custom rounded-4 bg-base shadow-effect">
-                    <div class="card-custom-image rounded-4">
-                      <img
-                        class="rounded-4"
-                        src="{{ asset('assets/images/project3.png') }}"
-                        alt="Laravel Website"
-                      />
-                    </div>
-                    <div class="card-custom-content p-4">
-                      <h4>Shape Calculator</h4>
-                      <p>                 
-                        Shape Calculator website, a versatile online tool designed to calculate various geometric shapes. This user-friendly platform allows users to effortlessly compute the parameters of different three-dimensional figures.
-                      </p>
-                      <a href="#" class="link-custom">Read More</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
-                  <div class="card-custom rounded-4 bg-base shadow-effect">
-                    <div class="card-custom-image rounded-4">
-                      <img
-                        class="rounded-4"
-                        src="{{ asset('assets/images/project4.png') }}"
-                        alt="Laravel Website"
-                      />
-                    </div>
-                    <div class="card-custom-content p-4">
-                      <h4>Laravel E-commerce</h4>
-                      <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Reiciendis, harum. Dolores corporis vitae ipsum
-                        perspiciatis.
-                      </p>
-                      <a href="#" class="link-custom">Read More</a>
-                    </div>
-                  </div>
-                </div>
+                @endforeach
               </div>
             </div>
           <!-- PROJECTS END -->

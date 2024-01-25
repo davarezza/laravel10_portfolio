@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class MainController extends Controller
@@ -29,8 +30,11 @@ class MainController extends Controller
 
     public function projects()
     {
+        $products = Product::all();
+        
         return view('projects', [
-            'active' => 'projects'
+            'active' => 'projects',
+            'products' => $products,
         ]);
     }
 
