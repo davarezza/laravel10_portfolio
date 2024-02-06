@@ -4,7 +4,7 @@
         <a class="navbar-brand mx-lg-auto mb-lg-4" href="#">
           <span class="h3 fw-bold d-block d-lg-none">DaFolioo</span>
           <img
-            src="./assets/images/davaprof.jpeg"
+            src="{{ asset('assets/images/davaprof.jpeg') }}"
             class="d-none d-lg-block rounded-circle"
             alt="Dava Rezza"
           />

@@ -38,6 +38,20 @@ class MainController extends Controller
         ]);
     }
 
+    public function show($id)
+    {
+        $product = Product::find($id);
+
+        if (!$product) {
+            return abort(404);
+        }
+
+        return view('show', [
+            'active' => 'projects',
+            'product' => $product,
+        ]);
+    }
+
     public function reviews()
     {
         return view('reviews', [

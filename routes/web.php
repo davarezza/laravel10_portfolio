@@ -22,6 +22,8 @@ Route::get('/services', [MainController::class, 'services'])->name('services');
 
 Route::get('/projects', [MainController::class, 'projects'])->name('projects');
 
+Route::get('/projects/{id}', [MainController::class, 'show'])->name('projects.show');
+
 Route::get('/reviews', [MainController::class, 'reviews'])->name('reviews');
 
 Route::get('/contact', [MainController::class, 'contact'])->name('contact');

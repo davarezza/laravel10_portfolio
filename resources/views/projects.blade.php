@@ -30,10 +30,10 @@
                     <div class="card-custom-content p-4">
                       <h4>{{ $data->name }}</h4>
                       <p>
-                        {{ Illuminate\Support\Str::limit($data->description, $limit = 160, $end = '...') }}
+                        {{ Illuminate\Support\Str::limit($data->description, $limit = 180, $end = '...') }}
                       </p>
                       <div class="d-flex justify-content-between align-items-center">
-                        <a href="#" class="link-custom">Read More</a>
+                        <a href="{{ route('projects.show', $data->id) }}" class="link-custom">Read More</a>
                         <a href="{{ $data->link }}" target="_blank" class="btn btn-dark text-white rounded-4"><i class="lab la-github"></i> Github</a>
                       </div>
                     </div>
