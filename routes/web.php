@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\SesiController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,3 +29,9 @@ Route::get('/projects/{id}', [MainController::class, 'show'])->name('projects.sh
 Route::get('/reviews', [MainController::class, 'reviews'])->name('reviews');
 
 Route::get('/contact', [MainController::class, 'contact'])->name('contact');
+
+Route::get('/login', [SesiController::class, 'loginPage'])->name('login')->middleware('guest');
+Route::post('/login', [SesiController::class, 'login']);
+Route::post('/logout', [SesiController::class, 'logout']);
+
+Route::resource('/projects/admin', AdminController::class)->middleware('userAkses:admin');

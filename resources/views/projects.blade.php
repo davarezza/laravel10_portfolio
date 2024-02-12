@@ -8,12 +8,18 @@
 @section('container')
           <!-- PROJECTS -->
             <div class="container full-height px-lg-5">
-              <div class="row pb-4" data-aos="fade-up">
+              <div class="row pb-3" data-aos="fade-up">
                 <div class="col-lg-8">
                   <h6 class="text-brand">Projects</h6>
                   <h1>My Recent Projects</h1>
                 </div>
               </div>
+
+              @if (Auth::check() && Auth::user()->role == 'admin')
+              <div class="mb-2" data-aos="fade-up">
+                <a href="{{ route('admin.create') }}" class="btn btn-info">Create Data</a>
+              </div>
+              @endif
     
               <div class="row gy-4">
 

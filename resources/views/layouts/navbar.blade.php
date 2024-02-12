@@ -15,10 +15,10 @@
               <a class="nav-link {{ ($active ==="home") ? 'active' : '' }}" href="{{ route('home') }}"
                 >Home</a>
             </li>
-            <li class="nav-item">
+            {{-- <li class="nav-item">
               <a class="nav-link {{ ($active ==="services") ? 'active' : '' }}" href="{{ route('services') }}"
                 >Services</a>
-            </li>
+            </li> --}}
             <li class="nav-item">
               <a class="nav-link {{ ($active ==="projects") ? 'active' : '' }}" href="{{ route('projects') }}"
                 >Projects</a>
@@ -36,7 +36,24 @@
                 >Contact</a>
             </li>
             <hr>
-            <p>© 2023 with ❤ by Darezz</p>
+            @auth
+              <li class="nav-item">
+                <a class="nav-link {{ ($active ==="laporan") ? 'active' : '' }}" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    {{ auth()->user()->name }}
+                </a>
+              </li>
+              <li class="nav-item">
+                <form action="/logout" method="post">
+                  @csrf
+                  <button type="submit" class="dropdown-item fw-bold text-warning fs-5">Logout</button>
+                </form>
+              </li>
+            @else
+            <li class="nav-item">
+              <a class="nav-link {{ ($active ==="login") ? 'active' : '' }}" href="{{ route('login') }}"
+                >Login</a>
+            </li>
+            @endauth
           </ul>
         </div>
       </div>

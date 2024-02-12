@@ -6,8 +6,10 @@
 @endsection
 
 @section('container')
-    <!-- CREATE -->
-    
-    <!-- CREATE END -->
+    <!-- PROJECTS -->
+    <div class="container full-height px-lg-5">
+        
+    </div>
+    <!-- PROJECTS END -->
     <script src="{{ asset('assets/js/aos.js') }}"></script>
 @endsection

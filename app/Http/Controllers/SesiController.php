@@ -9,7 +9,9 @@ class SesiController extends Controller
 {
     public function loginPage()
     {
-        return view('login');
+        return view('guest.login', [
+            'active' => 'login'
+        ]);
     }
 
     public function login(Request $request)
