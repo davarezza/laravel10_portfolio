@@ -14,7 +14,7 @@ class AdminController extends Controller
     {
         $products = Product::all();
 
-        return view('admin.index', [
+        return view('admin.projects.index', [
             'active' => 'projects',
             'products' => $products,
         ]);
@@ -25,7 +25,7 @@ class AdminController extends Controller
      */
     public function create()
     {
-        return view('admin.create', [
+        return view('admin.projects.create', [
             'active' => 'projects',
         ]);
     }
@@ -54,7 +54,7 @@ class AdminController extends Controller
             $data->save();
         }
 
-        return redirect()->route('projects/admin')->with('success', 'Add Data Successfully');
+        return redirect()->route('projects')->with('success', 'Add Data Successfully');
     }
 
     /**

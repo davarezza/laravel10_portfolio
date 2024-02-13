@@ -22,7 +22,7 @@ Route::get('/about', [MainController::class, 'about'])->name('about');
 
 Route::get('/services', [MainController::class, 'services'])->name('services');
 
-Route::get('/projects/{id}', [MainController::class, 'show'])->name('projects.show');
+Route::get('/product/{id}', [MainController::class, 'show'])->name('product.show');
 
 Route::get('/reviews', [MainController::class, 'reviews'])->name('reviews');
 
@@ -33,4 +33,7 @@ Route::post('/login', [SesiController::class, 'login']);
 Route::post('/logout', [SesiController::class, 'logout']);
 
 Route::get('/projects', [MainController::class, 'projects'])->name('projects');
-Route::resource('projects/admin', AdminController::class)->middleware('userAkses:admin');
+
+Route::prefix('admin')->group(function () {
+    Route::resource('projects', AdminController::class)->middleware('userAkses:admin');
+});

@@ -17,7 +17,8 @@
 
               @if (Auth::check() && Auth::user()->role == 'admin')
               <div class="mb-2" data-aos="fade-up">
-                <a href="{{ route('admin.create') }}" class="btn btn-info">Create Data</a>
+                <a href="{{ route('projects.index') }}" class="btn btn-info mb-2">Dashboard Admin</a>
+                <hr>
               </div>
               @endif
     
@@ -31,6 +32,7 @@
                         class="rounded-4"
                         src="{{ asset('imageProjects/'.$data->image) }}"
                         alt="{{ $data->name }}"
+                        style="height: 180px;"
                       />
                     </div>
                     <div class="card-custom-content p-4">
@@ -39,7 +41,7 @@
                         {{ Illuminate\Support\Str::limit($data->description, $limit = 180, $end = '...') }}
                       </p>
                       <div class="d-flex justify-content-between align-items-center">
-                        <a href="{{ route('projects.show', $data->id) }}" class="link-custom">Read More</a>
+                        <a href="{{ route('product.show', $data->id) }}" class="link-custom">Read More</a>
                         <a href="{{ $data->link }}" target="_blank" class="btn btn-dark text-white rounded-4"><i class="lab la-github"></i> Github</a>
                       </div>
                     </div>
