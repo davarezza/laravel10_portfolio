@@ -15,10 +15,6 @@
               <a class="nav-link {{ ($active ==="home") ? 'active' : '' }}" href="{{ route('home') }}"
                 >Home</a>
             </li>
-            {{-- <li class="nav-item">
-              <a class="nav-link {{ ($active ==="services") ? 'active' : '' }}" href="{{ route('services') }}"
-                >Services</a>
-            </li> --}}
             <li class="nav-item">
               <a class="nav-link {{ ($active ==="projects") ? 'active' : '' }}" href="{{ route('projects') }}"
                 >Projects</a>
@@ -38,7 +34,7 @@
             <hr>
             @auth
               <li class="nav-item">
-                <a class="nav-link {{ ($active ==="laporan") ? 'active' : '' }}" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     {{ auth()->user()->name }}
                 </a>
               </li>

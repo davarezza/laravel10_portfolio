@@ -29,7 +29,7 @@
                     <div class="card-custom-image rounded-4">
                       <img
                         class="rounded-4"
-                        src="{{ asset('product/'.$data->image) }}"
+                        src="{{ asset('imageProjects/'.$data->image) }}"
                         alt="{{ $data->name }}"
                       />
                     </div>

@@ -38,6 +38,8 @@ class SesiController extends Controller
                 return redirect('/projects');
             }
         }
+
+        return back()->with('loginError', 'Login Failed');
     }
 
     public function logout()

@@ -22,8 +22,6 @@ Route::get('/about', [MainController::class, 'about'])->name('about');
 
 Route::get('/services', [MainController::class, 'services'])->name('services');
 
-Route::get('/projects', [MainController::class, 'projects'])->name('projects');
-
 Route::get('/projects/{id}', [MainController::class, 'show'])->name('projects.show');
 
 Route::get('/reviews', [MainController::class, 'reviews'])->name('reviews');
@@ -34,4 +32,5 @@ Route::get('/login', [SesiController::class, 'loginPage'])->name('login')->middl
 Route::post('/login', [SesiController::class, 'login']);
 Route::post('/logout', [SesiController::class, 'logout']);
 
-Route::resource('/projects/admin', AdminController::class)->middleware('userAkses:admin');
+Route::get('/projects', [MainController::class, 'projects'])->name('projects');
+Route::resource('projects/admin', AdminController::class)->middleware('userAkses:admin');

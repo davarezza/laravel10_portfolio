@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -11,7 +12,12 @@ class AdminController extends Controller
      */
     public function index()
     {
-        //
+        $products = Product::all();
+
+        return view('admin.index', [
+            'active' => 'projects',
+            'products' => $products,
+        ]);
     }
 
     /**
@@ -29,7 +35,26 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'description' => 'required',
+            'link' => 'required',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+
+        $data = Product::create([
+            'name' => $request->name,
+            'description' => $request->description,
+            'link' => $request->link,
+        ]);
+
+        if ($request->hasFile('image')) {
+            $request->file('image')->move('imageProjects/', $request->file('image')->getClientOriginalName());
+            $data->image = $request->file('image')->getClientOriginalName();
+            $data->save();
+        }
+
+        return redirect()->route('projects/admin')->with('success', 'Add Data Successfully');
     }
 
     /**

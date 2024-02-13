@@ -15,7 +15,7 @@ class UserAkses
      */
     public function handle(Request $request, Closure $next, $role): Response
     {
-        if (auth()->user()->role == $role) {
+        if (auth()->check() && auth()->user()->role == $role) {
             return $next($request);
         }
         return redirect('projects');

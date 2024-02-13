@@ -10,7 +10,7 @@
     <div class="container full-height px-lg-5">
         <div class="row pb-4" data-aos="fade-up">
             <div class="col-lg-8">
-                <h6 class="text-brand">Projects {{ $product->id }}</h6>
+                <h6 class="text-brand">Projects</h6>
                 <h1>{{ $product->name }}</h1>
             </div>
         </div>
@@ -20,7 +20,7 @@
                 <div class="project-container bg-base shadow-effect rounded-4">
                     <img
                         class="rounded-4 w-100"
-                        src="{{ asset('product/'.$product->image) }}"
+                        src="{{ asset('ImageProjects/'.$product->image) }}"
                         alt="{{ $product->name }}"
                     />
                     <div class="project-description p-4">
