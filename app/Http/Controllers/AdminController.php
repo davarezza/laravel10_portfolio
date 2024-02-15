@@ -54,7 +54,7 @@ class AdminController extends Controller
             $data->save();
         }
 
-        return redirect()->route('projects')->with('success', 'Add Data Successfully');
+        return redirect()->route('projects.index')->with('success', 'Add Data Successfully');
     }
 
     /**
@@ -70,7 +70,11 @@ class AdminController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $product = Product::findOrFail($id);
+        return view('admin.projects.edit', [
+            'active' => 'projects',
+            'product' => $product
+        ]);
     }
 
     /**
@@ -78,14 +82,54 @@ class AdminController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'description' => 'required',
+            'link' => 'required',
+            'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+
+        $product = Product::findOrFail($id);
+
+        if ($request->hasFile('image')) {
+            $oldImagePath = public_path('imageProjects/' . $product->image);
+            if (file_exists($oldImagePath)) {
+                unlink($oldImagePath);
+            }
+
+            $request->file('image')->move('imageProjects/', $request->file('image')->getClientOriginalName());
+            $product->image = $request->file('image')->getClientOriginalName();
+        }
+
+        $product->name = $request->name;
+        $product->description = $request->description;
+        $product->link = $request->link;
+        $product->save();
+
+        return redirect()->route('projects.index')->with('success', 'Data berhasil diperbarui!');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(string $id, Product $product)
     {
-        //
+        $product = Product::find($id);
+
+        if ($product) {
+            if ($product->image) {
+                $imagePath = public_path('imageProjects/' . $product->image);
+                
+                if (file_exists($imagePath)) {
+                    unlink($imagePath);
+                }
+            }
+
+            $product->delete();
+    
+            return redirect()->route('projects.index')->with('success', 'Data berhasil dihapus!');
+        } else {
+            return redirect()->route('projects.index')->with('error', 'Data tidak ditemukan.');
+        }
     }
 }

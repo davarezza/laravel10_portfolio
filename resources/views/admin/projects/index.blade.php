@@ -57,11 +57,11 @@
                         <td>{{ $data->link }}</td>
                         <td>
                             <div class="btn-group" role="group" aria-label="Basic example">
-                                <a href="#" class="btn btn-info">Edit</a>
-                                <form action="#" method="post" class="d-inline">
+                                <a href="{{ route('projects.edit', $data->id) }}" class="btn btn-info">Edit</a>
+                                <form action="{{ route('projects.destroy', $data->id) }}" method="post" class="d-inline">
                                     @csrf
                                     @method('delete')
-                                    <button type="submit" class="btn btn-danger mx-2">Hapus</button>
+                                    <button type="submit" class="btn btn-danger mx-2">Delete</button>
                                 </form>
                             </div>
                         </td>
@@ -75,12 +75,12 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
-        // @if (Session::has('success'))
-        // toastr.options = {
-        //     "positionClass": "toast-top-right",
-        // };
-        // toastr.success("{{ Session::get('success') }}");
-        // @endif
+         @if (Session::has('success'))
+         toastr.options = {
+             "positionClass": "toast-top-right",
+         };
+         toastr.success("{{ Session::get('success') }}");
+         @endif
     </script>
 
 @endsection

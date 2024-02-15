@@ -38,7 +38,7 @@
                     <div class="card-custom-content p-4">
                       <h4>{{ $data->name }}</h4>
                       <p>
-                        {{ Illuminate\Support\Str::limit($data->description, $limit = 180, $end = '...') }}
+                        {{ Illuminate\Support\Str::limit($data->description, $limit = 200, $end = '...') }}
                       </p>
                       <div class="d-flex justify-content-between align-items-center">
                         <a href="{{ route('product.show', $data->id) }}" class="link-custom">Read More</a>
