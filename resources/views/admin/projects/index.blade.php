@@ -11,7 +11,6 @@
     <div class="container full-height px-lg-5">
         <div class="row pb-3" data-aos="fade-up">
             <div class="col-lg-8">
-                {{-- <h6 class="text-brand">Projects</h6> --}}
                 <h1>Dashboard Admin</h1>
             </div>
         </div>
@@ -19,6 +18,7 @@
         <div class="justify-content-space-between">
             <a href="{{ route('projects.create') }}" class="btn btn-info btn-tambah mb-2">Add Data</a>
             <a href="{{ route('projects') }}" class="btn btn-warning btn-tambah mb-2 mx-2">Back</a>
+            <a href="{{ route('activity') }}" class="btn btn-primary mb-2">Activity Log</a>
         </div>        
         <table class="table table-bg-dark">
             <thead>

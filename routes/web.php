@@ -39,4 +39,6 @@ Route::get('/projects', [MainController::class, 'projects'])->name('projects');
 
 Route::prefix('admin')->group(function () {
     Route::resource('projects', AdminController::class)->middleware('userAkses:admin');
+    Route::get('/activity', [AdminController::class, 'activity'])->name('activity')->middleware('userAkses:admin');
+    Route::delete('/activity/delete', [AdminController::class, 'deleteAll'])->name('activity.delete')->middleware('userAkses:admin');
 });

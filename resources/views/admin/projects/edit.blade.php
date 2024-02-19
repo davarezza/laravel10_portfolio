@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('title')
-  <title>{{ config('app.name') }} - Create</title>
+  <title>{{ config('app.name') }} - Edit</title>
   <link rel="stylesheet" href="{{ asset('assets/css/aos.css') }}" />
 @endsection
 

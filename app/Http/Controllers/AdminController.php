@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Spatie\Activitylog\Models\Activity;
 
 class AdminController extends Controller
 {
@@ -53,6 +54,8 @@ class AdminController extends Controller
             $data->image = $request->file('image')->getClientOriginalName();
             $data->save();
         }
+
+        activity()->causedBy(auth()->user())->log('Added new project: ' . $data->name);
 
         return redirect()->route('projects.index')->with('success', 'Add Data Successfully');
     }
@@ -106,7 +109,9 @@ class AdminController extends Controller
         $product->link = $request->link;
         $product->save();
 
-        return redirect()->route('projects.index')->with('success', 'Data berhasil diperbarui!');
+        activity()->causedBy(auth()->user())->log('Updated project: ' . $product->name);
+
+        return redirect()->route('projects.index')->with('success', 'Data updated successfully!');
     }
 
     /**
@@ -125,11 +130,33 @@ class AdminController extends Controller
                 }
             }
 
+            $productName = $product->name;
+
             $product->delete();
-    
-            return redirect()->route('projects.index')->with('success', 'Data berhasil dihapus!');
+
+            // Log activity
+            activity()->causedBy(auth()->user())->log('Deleted project: ' . $productName);
+
+            return redirect()->route('projects.index')->with('success', 'Data deleted successfully!');
         } else {
-            return redirect()->route('projects.index')->with('error', 'Data tidak ditemukan.');
+            return redirect()->route('projects.index')->with('error', 'Data not found.');
         }
+    }
+
+    public function activity()
+    {
+        $activities = Activity::all();
+
+        return view('activity', [
+            'activities' => $activities,
+            'active' => 'projects',
+        ]);
+    }
+
+    public function deleteAll()
+    {
+        Activity::truncate();
+
+        return redirect()->route('activity')->with('success', 'All activity has been deleted.');
     }
 }

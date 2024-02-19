@@ -31,6 +31,8 @@ class SesiController extends Controller
         // Add a flash message to the session
         session()->flash('success', 'Registration successful. You can now log in.');
 
+        activity()->log('User registered: ' . $validatedData['name']);
+
         return redirect('login');
     }
 
@@ -55,8 +57,10 @@ class SesiController extends Controller
 
         if (Auth::attempt($login)) {
             if (Auth::user()->role == 'visitor') {
+                activity()->causedBy(Auth::user())->log('User ' . auth()->user()->name . '  do login');
                 return redirect('/'); 
             } elseif (Auth::user()->role == 'admin') {
+                activity()->causedBy(Auth::user())->log('User ' . auth()->user()->name . ' do login');
                 return redirect('/admin/projects');
             }
         }
