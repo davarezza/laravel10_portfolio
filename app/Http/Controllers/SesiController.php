@@ -2,11 +2,38 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class SesiController extends Controller
 {
+    public function registerPage()
+    {
+        return view('guest.register', [
+            'active' => 'login'
+        ]);
+    }
+
+    public function register(Request $request)
+    {
+        $validatedData = $request->validate([
+            'name' => 'required|max:255',
+            'email' => 'required|email',
+            'password' => 'required|min:3|max:255'
+        ]);
+
+        $validatedData['password'] = Hash::make($validatedData['password']);
+
+        User::create($validatedData);
+
+        // Add a flash message to the session
+        session()->flash('success', 'Registration successful. You can now log in.');
+
+        return redirect('login');
+    }
+
     public function loginPage()
     {
         return view('guest.login', [
@@ -19,11 +46,6 @@ class SesiController extends Controller
         $request->validate([
             'email' => 'required|email',
             'password' => 'required',
-        ],
-        [
-            'email.required' => 'Email wajib diisi',
-            'email.email' => 'Format email salah',
-            'password.required' => 'Password wajib diisi',
         ]);
 
         $login = [

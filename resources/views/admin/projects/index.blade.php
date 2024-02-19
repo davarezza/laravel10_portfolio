@@ -7,18 +7,6 @@
 @endsection
 
 @section('container')
-    <style>
-        #toast-container {
-            top: 120px;
-            right: 50px;
-            opacity: 1;
-        }
-
-        .table-bg-dark {
-            background-color: #343a40;
-        }
-    </style>
-
     <!-- PROJECTS -->
     <div class="container full-height px-lg-5">
         <div class="row pb-3" data-aos="fade-up">

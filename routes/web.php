@@ -32,6 +32,9 @@ Route::get('/login', [SesiController::class, 'loginPage'])->name('login')->middl
 Route::post('/login', [SesiController::class, 'login']);
 Route::post('/logout', [SesiController::class, 'logout']);
 
+Route::get('/register', [SesiController::class, 'registerPage'])->name('register')->middleware('guest');
+Route::post('register', [SesiController::class, 'register']);
+
 Route::get('/projects', [MainController::class, 'projects'])->name('projects');
 
 Route::prefix('admin')->group(function () {
