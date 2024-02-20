@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\Review;
 use Illuminate\Http\Request;
 
 class MainController extends Controller
@@ -54,8 +55,11 @@ class MainController extends Controller
 
     public function reviews()
     {
+        $reviews = Review::all();
+
         return view('reviews', [
-            'active' => 'reviews'
+            'active' => 'reviews',
+            'reviews' => $reviews
         ]);
     }
 

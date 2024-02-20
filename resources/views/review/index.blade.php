@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('title')
-  <title>{{ config('app.name') }} - Admin</title>
+  <title>{{ config('app.name') }} - Admin Reviews</title>
   <link rel="stylesheet" href="{{ asset('assets/css/aos.css') }}" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 @endsection
@@ -11,43 +11,36 @@
     <div class="container full-height px-lg-5">
         <div class="row pb-3" data-aos="fade-up">
             <div class="col-lg-8">
-                <h1>Dashboard Admin</h1>
+                <h1>Reviews Dashboard</h1>
             </div>
         </div>
 
         <div class="justify-content-space-between">
-            <a href="{{ route('projects.create') }}" class="btn btn-info btn-tambah mb-2">Add Data</a>
-            <a href="{{ route('projects') }}" class="btn btn-warning btn-tambah mb-2 mx-2">Back</a>
-            <a href="{{ route('activity') }}" class="btn btn-primary mb-2">Activity Log</a>
-            <a href="{{ route('reviews.index') }}" class="btn btn-secondary mb-2 mx-2">Reviews Dashboard</a>
+            <a href="{{ route('projects.index') }}" class="btn btn-warning mb-2">Back To Admin Dashboard</a>
+            <a href="{{ route('reviews') }}" class="btn btn-info mb-2 mx-2">Back To Reviews</a>
         </div>        
         <table class="table table-bg-dark">
             <thead>
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Name</th>
-                    <th scope="col">Image</th>
-                    <th scope="col">Description</th>
-                    <th scope="col">Github</th>
+                    <th scope="col">Rating</th>
+                    <th scope="col">Comment</th>
+                    <th scope="col">Date</th>
                     <th scope="col">Action</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach($products as $key => $data)
+                @foreach($reviews as $key => $data)
                     <tr>
                         <th scope="row">{{ $loop->iteration }}</th>
                         <td>{{ $data->name }}</td>
-                        <td>
-                            <img src="{{ asset('imageProjects/'.$data->image) }}" alt="" style="width: 200px; height: 100px;">
-                        </td>
-                        <td>
-                            {{ Illuminate\Support\Str::limit($data->description, $limit = 30, $end = '...') }}
-                        </td>
-                        <td>{{ $data->link }}</td>
+                        <td>{{ $data->rating }}</td>
+                        <td>{{ $data->comment }}</td>
+                        <td>{{ $data->created_at }}</td>
                         <td>
                             <div class="btn-group" role="group" aria-label="Basic example">
-                                <a href="{{ route('projects.edit', $data->id) }}" class="btn btn-info">Edit</a>
-                                <form action="{{ route('projects.destroy', $data->id) }}" method="post" class="d-inline">
+                                <form action="{{ route('reviews.destroy', $data->id) }}" method="post" class="d-inline">
                                     @csrf
                                     @method('delete')
                                     <button type="submit" class="btn btn-danger mx-2">Delete</button>

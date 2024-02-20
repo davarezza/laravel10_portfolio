@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\SesiController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\VisitorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,4 +42,10 @@ Route::prefix('admin')->group(function () {
     Route::resource('projects', AdminController::class)->middleware('userAkses:admin');
     Route::get('/activity', [AdminController::class, 'activity'])->name('activity')->middleware('userAkses:admin');
     Route::delete('/activity/delete', [AdminController::class, 'deleteAll'])->name('activity.delete')->middleware('userAkses:admin');
+    Route::get('/reviews', [VisitorController::class, 'index'])->name('reviews.index')->middleware('userAkses:admin');
+    Route::delete('/reviews/delete', [VisitorController::class, 'destroy'])->name('reviews.destroy')->middleware('userAkses:admin');
+});
+
+Route::prefix('visitor')->group(function () {
+    Route::resource('reviews', VisitorController::class)->middleware('userAkses:visitor')->except(['index', 'destroy']);
 });
