@@ -49,3 +49,9 @@ Route::prefix('admin')->group(function () {
 Route::prefix('visitor')->group(function () {
     Route::resource('reviews', VisitorController::class)->middleware('userAkses:visitor')->except(['index', 'destroy']);
 });
+
+Route::fallback(function () {
+    return view('error', [
+        'active' => '',
+    ]);
+});

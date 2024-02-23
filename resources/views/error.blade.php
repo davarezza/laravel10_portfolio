@@ -1,0 +1,20 @@
+@extends('layouts.main')
+
+@section('title')
+  <title>{{ config('app.name') }} - Error</title>
+  <link rel="stylesheet" href="{{ asset('assets/css/aos.css') }}" />
+@endsection
+
+@section('container')
+          <!-- PROJECTS -->
+            <div class="container full-height px-lg-5">
+              <div class="row pb-3" data-aos="fade-up">
+                <div class="col-lg-8">
+                  <h6 class="text-brand">Error</h6>
+                  <h1>401. Page Not Found</h1>
+                </div>
+              </div>
+            </div>
+          <!-- PROJECTS END -->
+      <script src="{{ asset('assets/js/aos.js') }}"></script>
+@endsection

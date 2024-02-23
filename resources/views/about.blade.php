@@ -57,7 +57,7 @@
   
                   <div class="col-12" data-aos="fade-up" data-aos-delay="300">
                     <div class="bg-base p-4 rounded-4 shadow-effect">
-                      <h4>Master of Software Engineering</h4>
+                      <h4>2nd Best Graduate of SDN 1 Purwodadi</h4>
                       <p class="text-brand mb-2">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
                       <p class="mb-0">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque tempora ab fugiat rerum praesentium.</p>
                     </div>
