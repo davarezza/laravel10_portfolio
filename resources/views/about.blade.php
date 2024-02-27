@@ -25,8 +25,8 @@
                 <img src="./assets/images/davaprof.jpeg" alt="" class="img-thumbnail">
               </div>
               <div class="col-lg-8 text-profile">
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis tempora ipsam odio. Provident dolor esse ex nam voluptates amet libero consequuntur, alias repudiandae dolores fugit. Sapiente maxime labore ullam quibusdam.</p>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusantium tempora porro necessitatibus omnis possimus a.</p>
+                <p>I am a vocational student majoring in Software Engineering who is very passionate about becoming a Backend Developer.</p>
+                <p>My understanding and deepening of programming, database management, and Rest API creation has been applied in my school assignments.</p>
                 <a href="{{ route('projects') }}" class="btn btn-warning me-3">Check My Projects</a>
                 <a href="#skill" class="link-custom">Scroll Down!</a>
               </div>
@@ -57,25 +57,25 @@
   
                   <div class="col-12" data-aos="fade-up" data-aos-delay="300">
                     <div class="bg-base p-4 rounded-4 shadow-effect">
-                      <h4>2nd Best Graduate of SDN 1 Purwodadi</h4>
-                      <p class="text-brand mb-2">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
-                      <p class="mb-0">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque tempora ab fugiat rerum praesentium.</p>
+                      <h4>2nd Best Graduate</h4>
+                      <p class="text-brand mb-2">SDN 1 Purwodadi</p>
+                      <p class="mb-0">Successfully obtained 2nd place in a row in class 6</p>
                     </div>
                   </div>
   
                   <div class="col-12" data-aos="fade-up" data-aos-delay="300">
                     <div class="bg-base p-4 rounded-4 shadow-effect">
-                      <h4>Master of Software Engineering</h4>
-                      <p class="text-brand mb-2">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
-                      <p class="mb-0">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque tempora ab fugiat rerum praesentium.</p>
+                      <h4>Graduated from junior high school on time</h4>
+                      <p class="text-brand mb-2">SMPN 1 Purwodadi</p>
+                      <p class="mb-0">Got 2nd place during 3rd grade for 2 consecutive times</p>
                     </div>
                   </div>
   
                   <div class="col-12" data-aos="fade-up" data-aos-delay="300">
                     <div class="bg-base p-4 rounded-4 shadow-effect">
-                      <h4>Master of Software Engineering</h4>
-                      <p class="text-brand mb-2">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
-                      <p class="mb-0">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque tempora ab fugiat rerum praesentium.</p>
+                      <h4>Software Engineering Students</h4>
+                      <p class="text-brand mb-2">SMKN 1 Purwosari</p>
+                      <p class="mb-0">Currently in 11th grade rpl and focusing on laravel programming.</p>
                     </div>
                   </div>
   
@@ -90,25 +90,25 @@
     
                     <div class="col-12" data-aos="fade-up" data-aos-delay="300">
                       <div class="bg-base p-4 rounded-4 shadow-effect">
-                        <h4>Master of Software Engineering</h4>
-                        <p class="text-brand mb-2">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
-                        <p class="mb-0">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque tempora ab fugiat rerum praesentium.</p>
+                        <h4>IDCamp 2023 Participants</h4>
+                        <p class="text-brand mb-2">Dicoding</p>
+                        <p class="mb-0">Complete some of the modules provided and be digitally certified</p>
                       </div>
                     </div>
     
                     <div class="col-12" data-aos="fade-up" data-aos-delay="300">
                       <div class="bg-base p-4 rounded-4 shadow-effect">
-                        <h4>Master of Software Engineering</h4>
-                        <p class="text-brand mb-2">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
-                        <p class="mb-0">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque tempora ab fugiat rerum praesentium.</p>
+                        <h4>Website Creation Using various types of programming languages</h4>
+                        <p class="text-brand mb-2">SMKN 1 Purwosari</p>
+                        <p class="mb-0">Creating various kinds of websites including Laravel, Javascript, and so on</p>
                       </div>
                     </div>
                     
                     <div class="col-12" data-aos="fade-up" data-aos-delay="300">
                       <div class="bg-base p-4 rounded-4 shadow-effect">
-                        <h4>Master of Software Engineering</h4>
-                        <p class="text-brand mb-2">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
-                        <p class="mb-0">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque tempora ab fugiat rerum praesentium.</p>
+                        <h4>DBS Foundation 2024 Participants</h4>
+                        <p class="text-brand mb-2">Dicoding</p>
+                        <p class="mb-0">Complete some of the modules provided and be digitally certified</p>
                       </div>
                     </div>
     

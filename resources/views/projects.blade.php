@@ -25,7 +25,7 @@
               <div class="row gy-4">
 
                 @foreach ($products as $key => $data)
-                <div class="col-md-6" data-aos="fade-up">
+                <div class="col-md-6">
                   <div class="card-custom rounded-4 bg-base shadow-effect">
                     <div class="card-custom-image rounded-4">
                       <img

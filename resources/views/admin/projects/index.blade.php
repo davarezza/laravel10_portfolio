@@ -26,7 +26,6 @@
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Name</th>
-                    <th scope="col">Image</th>
                     <th scope="col">Description</th>
                     <th scope="col">Github</th>
                     <th scope="col">Action</th>
@@ -37,9 +36,6 @@
                     <tr>
                         <th scope="row">{{ $loop->iteration }}</th>
                         <td>{{ $data->name }}</td>
-                        <td>
-                            <img src="{{ asset('imageProjects/'.$data->image) }}" alt="" style="width: 200px; height: 100px;">
-                        </td>
                         <td>
                             {{ Illuminate\Support\Str::limit($data->description, $limit = 30, $end = '...') }}
                         </td>
