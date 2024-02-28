@@ -26,9 +26,7 @@ class VisitorController extends Controller
      */
     public function create()
     {
-        return view('review.create', [
-            'active' => 'reviews',
-        ]);
+        return view('review.create', ['active' => 'reviews']);
     }
 
     /**
@@ -42,39 +40,11 @@ class VisitorController extends Controller
             'name' => 'required',
         ]);
 
-        $data = Review::create([
-            'rating' => $request->rating,
-            'comment' => $request->comment,
-            'name' => $request->name,
-        ]);
+        $review = Review::create($request->only(['rating', 'comment', 'name']));
 
-        activity()->causedBy(auth()->user())->log('Added new review: ' . $data->name);
+        $this->logActivity('Added new review: ' . $review->name);
 
-        return redirect()->route('reviews')->with('success', 'Add Data Successfully');
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
+        return redirect()->route('reviews.index')->with('success', 'Review added successfully.');
     }
 
     /**
@@ -84,10 +54,16 @@ class VisitorController extends Controller
     {
         $review->delete();
 
-        activity()
-            ->causedBy(Auth::user())
-            ->log('Menghapus review: ' . $review->name);
+        $this->logActivity('Deleted review: ' . $review->name);
 
-        return redirect()->route('reviews.index')->with('success', 'Data berhasil dihapus!');
+        return redirect()->route('reviews.index')->with('success', 'Review deleted successfully.');
+    }
+
+    /**
+     * Log user activity.
+     */
+    private function logActivity($message)
+    {
+        activity()->causedBy(Auth::user())->log($message);
     }
 }
