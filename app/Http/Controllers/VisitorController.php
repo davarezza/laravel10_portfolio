@@ -44,14 +44,16 @@ class VisitorController extends Controller
 
         $this->logActivity('Added new review: ' . $review->name);
 
-        return redirect()->route('reviews.index')->with('success', 'Review added successfully.');
+        return redirect()->route('reviews')->with('success', 'Review added successfully.');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Review $review)
+    public function destroy($id)
     {
+        $review = Review::findOrFail($id);
+
         $review->delete();
 
         $this->logActivity('Deleted review: ' . $review->name);

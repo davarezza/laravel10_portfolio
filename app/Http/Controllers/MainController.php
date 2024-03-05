@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ContactMe;
 use App\Models\Product;
 use App\Models\Review;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class MainController extends Controller
 {
@@ -68,5 +70,19 @@ class MainController extends Controller
         return view('contact', [
             'active' => 'contact'
         ]);
+    }
+
+    public function send()
+    {
+        $data = request()->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+            'message' => 'required',
+        ]);
+
+        Mail::to('aremadava3@gmail.com')->send(new ContactMe($data));
+
+        // dd('sent');
+        return redirect()->back()->with('success', 'Message sent successfully');
     }
 }

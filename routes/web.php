@@ -28,6 +28,7 @@ Route::get('/product/{id}', [MainController::class, 'show'])->name('product.show
 Route::get('/reviews', [MainController::class, 'reviews'])->name('reviews');
 
 Route::get('/contact', [MainController::class, 'contact'])->name('contact');
+Route::post('/contact', [MainController::class, 'send'])->name('contact.send');
 
 Route::get('/login', [SesiController::class, 'loginPage'])->name('login')->middleware('guest');
 Route::post('/login', [SesiController::class, 'login']);
@@ -43,7 +44,7 @@ Route::prefix('admin')->group(function () {
     Route::get('/activity', [AdminController::class, 'activity'])->name('activity')->middleware('userAkses:admin');
     Route::delete('/activity/delete', [AdminController::class, 'deleteAll'])->name('activity.delete')->middleware('userAkses:admin');
     Route::get('/reviews', [VisitorController::class, 'index'])->name('reviews.index')->middleware('userAkses:admin');
-    Route::delete('/reviews/delete', [VisitorController::class, 'destroy'])->name('reviews.destroy')->middleware('userAkses:admin');
+    Route::delete('/reviews/{id}', [VisitorController::class, 'destroy'])->name('reviews.destroy')->middleware('userAkses:admin');
 });
 
 Route::prefix('visitor')->group(function () {
