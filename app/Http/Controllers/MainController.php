@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Jobs\ContactMeJob;
 use App\Mail\ContactMe;
 use App\Models\Product;
 use App\Models\Review;
@@ -80,7 +81,9 @@ class MainController extends Controller
             'message' => 'required',
         ]);
 
-        Mail::to('aremadava3@gmail.com')->send(new ContactMe($data));
+        // Mail::to('aremadava3@gmail.com')->send(new ContactMe($data));
+        $job = (new ContactMeJob($data));
+        dispatch($job);
 
         // dd('sent');
         return redirect()->back()->with('success', 'Message sent successfully');
