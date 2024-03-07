@@ -17,6 +17,7 @@ return new class extends Migration
             $table->text('description');
             $table->string('link');
             $table->string('image')->nullable();
+            $table->integer('product_view')->nullable();
             $table->timestamps();
         });
     }

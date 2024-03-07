@@ -42,6 +42,7 @@
                       </p>
                       <div class="d-flex justify-content-between align-items-center">
                         <a href="{{ route('product.show', $data->id) }}" class="link-custom">Read More</a>
+                        <a href="#" class="link-custom"><i class="las la-eye"></i> {{ views($data)->count() }}</a>
                         <a href="{{ $data->link }}" target="_blank" class="btn btn-dark text-white rounded-4"><i class="lab la-github"></i> Github</a>
                       </div>
                     </div>

@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Jobs\ContactMeJob;
+use Illuminate\Support\Facades\DB;
+use App\Models\Review;
 use App\Mail\ContactMe;
 use App\Models\Product;
-use App\Models\Review;
+use App\Jobs\ContactMeJob;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Session;
 
 class MainController extends Controller
 {
@@ -35,7 +37,7 @@ class MainController extends Controller
     public function projects()
     {
         $products = Product::all();
-        
+
         return view('projects', [
             'active' => 'projects',
             'products' => $products,
@@ -46,6 +48,12 @@ class MainController extends Controller
     {
         $product = Product::find($id);
 
+        $key = 'product_viewed_' . $id;
+        if (!Session::has($key)) {
+            views($product)->record();
+            Session::flash($key, true);
+        }
+        
         if (!$product) {
             return abort(404);
         }
