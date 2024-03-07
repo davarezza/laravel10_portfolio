@@ -20,7 +20,7 @@
               <div data-aos="fade-up" data-aos-delay="600">
                 {{-- <a href="#work" class="btn btn-brand me-3 btn-home">Explore My Work</a> --}}
                 <a href="https://github.com/davarezza" target="_blank" class="btn btn-warning me-3 btn-home"><i class="lab la-github"></i> Visit My Github</a>
-                <a href="#" class="link-custom">Call: (62) 8383583922</a>
+                <a href="https://wa.me/08383583922" class="link-custom"><i class="lab la-whatsapp"></i> Call: (62) 8383583922</a>
               </div>
             </div>
           </div>
