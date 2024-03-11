@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\DB;
 use App\Models\Review;
 use App\Mail\ContactMe;
 use App\Models\Product;
 use App\Jobs\ContactMeJob;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Session;
 
 class MainController extends Controller
@@ -49,9 +50,11 @@ class MainController extends Controller
         $product = Product::find($id);
 
         $key = 'product_viewed_' . $id;
+
+        // Cek apakah Cookie dengan nama tertentu sudah ada
         if (!Session::has($key)) {
             views($product)->record();
-            Session::flash($key, true);
+            Session::put($key, true);
         }
         
         if (!$product) {
