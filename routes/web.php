@@ -34,6 +34,9 @@ Route::get('/login', [SesiController::class, 'loginPage'])->name('login')->middl
 Route::post('/login', [SesiController::class, 'login']);
 Route::post('/logout', [SesiController::class, 'logout']);
 
+Route::get('/auth/google',[SesiController::class, 'redirectToGoogle'])->name('google.login');
+Route::get('/auth/google/callback',[SesiController::class, 'googleCallback'])->name('google.callback');
+
 Route::get('/register', [SesiController::class, 'registerPage'])->name('register')->middleware('guest');
 Route::post('register', [SesiController::class, 'register']);
 

@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Laravel\Socialite\Facades\Socialite;
 
 class SesiController extends Controller
 {
@@ -76,6 +77,47 @@ class SesiController extends Controller
         request()->session()->invalidate();
 
         return redirect('/');
+    }
+
+    /**
+     * Handle Login with google account
+     */
+
+    public function redirectToGoogle()
+    {
+        return Socialite::driver('google')->redirect();
+    }
+
+    public function googleCallback()
+    {
+        try {
+            $user = Socialite::driver('google')->user();
+            // dd($user);
+            $findUser = User::where('google_id', $user->getId())->first();
+            if (!$findUser) {
+                $newUser = new User([
+                    'google_id' => $user->getId(),
+                    'name' => $user->getName(),
+                    'email' => $user->getEmail(),
+                    'password' => bcrypt('1234'),
+                ]);
+
+                $newUser->save();
+
+                auth('web')->login($newUser);
+                session()->regenerate();
+
+                return redirect('/');
+            }
+
+            auth('web')->login($findUser);
+            session()->regenerate();
+
+            return redirect('/');
+
+        } catch (\Throwable $th) {
+            //throw $th;
+        }
     }
 
     /**

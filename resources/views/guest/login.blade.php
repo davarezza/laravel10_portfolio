@@ -34,9 +34,12 @@
                 @enderror
             </div>
             <div class="d-flex justify-content-between align-items-center">
-                <input type="submit" value="Login" class="btn btn-info">
+                <div>
+                    <input type="submit" value="Login" class="btn btn-info">
+                    <a href="{{ route('google.login') }}" class="btn btn-danger mx-3"><i class="lab la-google-plus"></i> Login Using Google</a>
+                </div>
                 <a href="{{ route('register') }}" class="mx-2 link-custom">Register</a>
-            </div>
+            </div>                      
         </form>
     </div>
     </div>
