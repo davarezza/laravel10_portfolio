@@ -49,7 +49,8 @@
                     @enderror
                     </div>
                     <div class="form-group col-12 d-grid">
-                        <button type="submit" class="btn btn-brand">Send</button>
+                        <button type="submit" class="btn btn-brand mb-3">Send</button>
+                        <button class="btn btn-primary" id="openChatBot">Chat With BOT</button>
                     </div>
                 </form>
             </div>
@@ -61,6 +62,16 @@
     <script src="{{ asset('assets/js/aos.js') }}"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+    <script src="https://mediafiles.botpress.cloud/3a190fed-6c08-41af-af5c-097d737b93d6/webchat/config.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById('openChatBot').addEventListener('click', function(e) {
+                e.preventDefault();
+                window.botpressWebChat.sendEvent({ type: 'show' });
+            });
+        });
+        </script>        
     <script>
          @if (Session::has('success'))
          toastr.options = {
