@@ -49,7 +49,7 @@
                     @enderror
                     </div>
                     <div class="form-group col-12 d-grid">
-                        <button type="submit" class="btn btn-brand mb-3">Send</button>
+                        <button type="submit" class="btn btn-brand mb-2">Send</button>
                         <button class="btn btn-primary" id="openChatBot">Chat With BOT</button>
                     </div>
                 </form>

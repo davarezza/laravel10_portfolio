@@ -16,7 +16,7 @@
         </div>
 
         <div class="justify-content-space-between">
-            <a href="{{ route('projects.create') }}" class="btn btn-info btn-tambah mb-2">Add Data</a>
+            <a href="{{ route('projects.create') }}" class="btn btn-info btn-tambah mb-2">New Project</a>
             <a href="{{ route('projects') }}" class="btn btn-warning btn-tambah mb-2 mx-2">Back</a>
             <a href="{{ route('activity') }}" class="btn btn-primary mb-2">Activity Log</a>
             <a href="{{ route('reviews.index') }}" class="btn btn-secondary mb-2 mx-2">Reviews Dashboard</a>

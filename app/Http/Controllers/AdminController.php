@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use App\Notifications\NewProject;
 use Spatie\Activitylog\Models\Activity;
+use Illuminate\Support\Facades\Notification;
 
 class AdminController extends Controller
 {
@@ -54,6 +57,15 @@ class AdminController extends Controller
             $data->image = $request->file('image')->getClientOriginalName();
             $data->save();
         }
+
+        $users = User::all();
+        Notification::send($users, new NewProject([
+            'greeting' => 'Hello!',
+            'body' => 'A new project has been added.',
+            'actionText' => 'View Project',
+            'actionUrl' => url('/projects'),
+            'lastLine' => 'Thank you for using my application!',
+        ]));
 
         activity()->causedBy(auth()->user())->log('Added new project: ' . $data->name);
 
