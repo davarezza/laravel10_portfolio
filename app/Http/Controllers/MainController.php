@@ -48,24 +48,25 @@ class MainController extends Controller
     public function show($id)
     {
         $product = Product::find($id);
-
-        $key = 'product_viewed_' . $id;
-
-        // Cek apakah Cookie dengan nama tertentu sudah ada
-        if (!Session::has($key)) {
-            views($product)->record();
-            Session::put($key, true);
-        }
-        
+    
         if (!$product) {
             return abort(404);
         }
-
+    
+        $key = 'product_viewed_' . $id;
+    
+        if (Session::has($key)) {
+            Session::forget($key);
+        } else {
+            views($product)->record();
+            Session::put($key, true);
+        }
+    
         return view('show', [
             'active' => 'projects',
             'product' => $product,
         ]);
-    }
+    }    
 
     public function reviews()
     {
